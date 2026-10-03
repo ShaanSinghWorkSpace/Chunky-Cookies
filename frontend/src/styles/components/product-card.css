@@ -1,0 +1,377 @@
+.product-card {
+  overflow: hidden;
+
+  background-color: var(--color-white);
+
+  border: none;
+  border-radius: 22px;
+
+  box-shadow: 0 8px 22px rgba(23, 23, 23, 0.06);
+
+  transition:
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.product-card:hover {
+  box-shadow: 0 18px 38px rgba(23, 23, 23, 0.1);
+}
+
+/* ========================================
+   PRODUCT IMAGE
+======================================== */
+
+.product-image {
+  position: relative;
+
+  aspect-ratio: 1 / 0.88;
+
+  overflow: hidden;
+
+  padding: 13px;
+
+  background-color: var(--color-white);
+}
+
+.product-image::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 13px;
+
+  border-radius: 46% 44% 42% 38%;
+
+  background-color: #f4e8d8;
+}
+
+.product-image img {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 46% 44% 42% 38%;
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.045);
+}
+
+/* ========================================
+   IMAGE PLACEHOLDER
+======================================== */
+
+.product-placeholder {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 46% 44% 42% 38%;
+
+  background-color: #f4e8d8;
+  color: var(--color-gray);
+
+  text-align: center;
+}
+
+.product-placeholder span {
+  font-size: 8px;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: 1.5px;
+}
+
+.product-placeholder strong {
+  margin-top: 4px;
+
+  color: var(--color-black);
+
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ========================================
+   PRODUCT INFO
+======================================== */
+
+.product-info {
+  padding: 17px 17px 16px;
+
+  background-color: var(--color-white);
+}
+
+.product-details {
+  min-height: 65px;
+}
+
+.product-info h4 {
+  color: var(--color-black);
+
+  font-size: 20px;
+  line-height: 1.05;
+}
+
+.product-info p {
+  margin-top: 7px;
+
+  color: var(--color-gray);
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+/* ========================================
+   PRODUCT FOOTER
+======================================== */
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  margin-top: 13px;
+}
+
+.product-price {
+  color: var(--color-black);
+
+  font-size: 17px;
+  font-weight: var(--font-weight-extrabold);
+}
+
+/* ========================================
+   ADD TO CART
+======================================== */
+
+.add-button {
+  min-width: 130px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 8px;
+
+  padding: 4px 5px 4px 14px;
+
+  border: none;
+  border-radius: 999px;
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  font-size: 9px;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: 0.35px;
+
+  transition:
+    background-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.add-button:hover {
+  background-color: var(--color-black);
+}
+
+.add-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.add-button-icon {
+  width: 34px;
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.add-button-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ========================================
+   QUANTITY CONTROL
+======================================== */
+
+.product-footer .quantity-control {
+  min-width: 118px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 4px;
+
+  border: 1px solid rgba(23, 23, 23, 0.12);
+  border-radius: 999px;
+
+  background-color: var(--color-white);
+}
+
+/*
+  Higher-specificity selector intentionally used here
+  so other generic button styles cannot turn these
+  controls white.
+*/
+
+.product-card .product-footer .quantity-control button {
+  width: 33px;
+  height: 33px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--color-black);
+  color: var(--color-white);
+
+  font-size: 18px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.product-card .product-footer .quantity-control button:hover {
+  background-color: var(--color-primary);
+
+  transform: scale(1.05);
+}
+
+.product-card .product-footer .quantity-control button:active {
+  transform: scale(0.94);
+}
+
+.product-card .product-footer .quantity-control span {
+  min-width: 20px;
+
+  text-align: center;
+
+  color: var(--color-black);
+
+  font-size: 12px;
+  font-weight: var(--font-weight-extrabold);
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .product-card {
+    display: grid;
+
+    grid-template-columns: 42% 58%;
+
+    min-height: 180px;
+
+    border-radius: 18px;
+  }
+
+  .product-image {
+    aspect-ratio: auto;
+
+    min-height: 180px;
+
+    padding: 9px;
+  }
+
+  .product-image::before {
+    inset: 9px;
+  }
+
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 15px 14px 14px;
+  }
+
+  .product-details {
+    min-height: 0;
+  }
+
+  .product-info h4 {
+    font-size: 17px;
+  }
+
+  .product-info p {
+    font-size: 10px;
+  }
+
+  .product-footer {
+    margin-top: 12px;
+  }
+
+  .product-price {
+    font-size: 15px;
+  }
+
+  .add-button {
+    min-width: 105px;
+    height: 38px;
+
+    padding-left: 11px;
+
+    font-size: 8px;
+  }
+
+  .add-button-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .product-footer .quantity-control {
+    min-width: 105px;
+    height: 38px;
+  }
+
+  .product-card .product-footer .quantity-control button {
+    width: 29px;
+    height: 29px;
+
+    font-size: 16px;
+  }
+}

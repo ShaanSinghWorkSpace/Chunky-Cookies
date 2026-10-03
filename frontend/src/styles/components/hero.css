@@ -1,0 +1,836 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-top: 125px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ========================================
+   HERO BACKGROUND
+======================================== */
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background: url("../../assets/images/hero-background.png")
+    center / cover no-repeat;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(255, 80, 38, 0.08) 0%,
+    rgba(255, 80, 38, 0) 55%,
+    rgba(255, 80, 38, 0.04) 100%
+  );
+
+  pointer-events: none;
+}
+
+/* ========================================
+   MAIN HERO CONTENT
+======================================== */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+
+  min-height: 500px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.88fr)
+    minmax(500px, 1.12fr);
+
+  align-items: center;
+  gap: 30px;
+
+  padding: 25px 0 30px;
+}
+
+/* ========================================
+   LEFT CONTENT
+======================================== */
+
+.hero-text {
+  position: relative;
+  z-index: 5;
+
+  max-width: 650px;
+}
+
+.hero-kicker {
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+
+  margin-bottom: 20px;
+  padding-left: 16px;
+
+  border-left: 3px solid var(--color-white);
+
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.25;
+  letter-spacing: 1.8px;
+}
+
+.hero h1 {
+  max-width: 680px;
+  margin: 0;
+
+  color: var(--color-white);
+  font-size: clamp(68px, 7.2vw, 104px);
+  line-height: 0.8;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 em {
+  color: var(--color-cream);
+  font-style: normal;
+}
+
+.hero-description {
+  max-width: 535px;
+  margin-top: 25px;
+
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* ========================================
+   HERO ACTIONS
+======================================== */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin-top: 28px;
+}
+
+.hero-primary-button {
+  min-width: 230px;
+  min-height: 60px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+  padding: 6px 7px 6px 27px;
+
+  border-radius: 999px;
+
+  background-color: var(--color-cream);
+  color: var(--color-black);
+
+  font-size: 15px;
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  box-shadow: 0 15px 35px rgba(23, 23, 23, 0.18);
+}
+
+.hero-button-icon {
+  width: 48px;
+  height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.hero-button-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.hero-menu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+}
+
+.hero-menu-link strong {
+  position: relative;
+  font-weight: var(--font-weight-extrabold);
+}
+
+.hero-menu-link strong::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+
+  height: 2px;
+
+  background-color: var(--color-white);
+}
+
+.hero-menu-link svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ========================================
+   COOKIE VISUAL
+======================================== */
+
+.hero-visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 720px;
+
+  justify-self: end;
+
+  padding: 20px 20px 35px;
+}
+
+.hero-photo {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 1 / 0.9;
+
+  display: block;
+
+  overflow: hidden;
+  padding: 0;
+
+  border: 7px solid var(--color-cream);
+  border-radius: 42% 38% 34% 32%;
+
+  background-color: var(--color-cream);
+
+  transform: rotate(2deg);
+
+  box-shadow: 0 30px 60px rgba(23, 23, 23, 0.22);
+
+  cursor: pointer;
+}
+
+.hero-photo::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.07),
+    transparent 42%,
+    rgba(23, 23, 23, 0.12)
+  );
+
+  pointer-events: none;
+}
+
+.hero-photo img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* ========================================
+   COOKIE NAME STICKER
+======================================== */
+
+.hero-flavour-label {
+  position: absolute;
+  left: -8px;
+  top: 145px;
+  z-index: 6;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  color: var(--color-black);
+
+  font-size: 11px;
+  font-weight: var(--font-weight-extrabold);
+  line-height: 1.15;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  transform: rotate(-4deg);
+}
+
+.hero-flavour-label span {
+  display: inline-block;
+  width: fit-content;
+
+  padding: 5px 11px;
+
+  border-radius: 999px;
+
+  background-color: var(--color-cream);
+
+  box-shadow: 0 8px 20px rgba(23, 23, 23, 0.14);
+}
+
+.hero-flavour-label strong {
+  display: inline-block;
+  width: max-content;
+
+  margin-top: 5px;
+  padding: 9px 15px 11px;
+
+  border-radius: 16px;
+
+  background-color: var(--color-cream);
+  color: var(--color-black);
+
+  font-family: var(--font-body);
+  font-size: 26px;
+  font-weight: var(--font-weight-extrabold);
+
+  line-height: 0.95;
+  letter-spacing: -0.6px;
+
+  white-space: nowrap;
+  text-transform: none;
+
+  box-shadow: 0 11px 26px rgba(23, 23, 23, 0.14);
+}
+
+/* ========================================
+   FRESH BADGE
+======================================== */
+
+.hero-photo-label {
+  position: absolute;
+  right: -4px;
+  top: 42px;
+  z-index: 6;
+
+  width: 120px;
+  height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: var(--color-cream);
+  color: var(--color-black);
+
+  transform: rotate(7deg);
+
+  box-shadow: 0 15px 35px rgba(23, 23, 23, 0.16);
+}
+
+.hero-photo-label span {
+  font-size: 10px;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: 1.5px;
+}
+
+.hero-photo-label strong {
+  margin: 2px 0;
+
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 0.9;
+}
+
+/* ========================================
+   COOKIE CAROUSEL INDICATORS
+======================================== */
+
+.hero-cookie-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  z-index: 8;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  transform: translateX(-50%);
+}
+
+.hero-cookie-indicator button {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--color-white);
+  opacity: 0.55;
+
+  box-shadow: 0 3px 8px rgba(23, 23, 23, 0.15);
+
+  transition:
+    width var(--transition-fast),
+    opacity var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.hero-cookie-indicator button.active {
+  width: 30px;
+
+  border-radius: 999px;
+
+  background-color: var(--color-cream);
+  opacity: 1;
+}
+
+/* ========================================
+   OLD CSS DECORATIONS
+======================================== */
+
+.hero-decoration {
+  display: none;
+}
+
+/* ========================================
+   BOTTOM FEATURE STRIP
+======================================== */
+
+.hero-bottom-strip {
+  position: relative;
+  z-index: 5;
+
+  height: 120px;
+  min-height: 105px;
+
+  margin-top: 0;
+
+  background-color: var(--color-cream);
+  color: var(--color-black);
+
+  border-radius: 50% 50% 0 0 / 22% 22% 0 0;
+
+  box-shadow: 0 -8px 25px rgba(23, 23, 23, 0.04);
+}
+
+.hero-features {
+  height: 105px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+  gap: 25px;
+}
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 55px;
+
+  padding-right: 22px;
+
+  border-right: 1px solid rgba(23, 23, 23, 0.13);
+}
+
+.hero-feature:last-child {
+  border-right: none;
+}
+
+.hero-feature > svg {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  color: var(--color-primary);
+  stroke-width: 2;
+}
+
+.hero-feature div {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-feature strong {
+  font-size: 13px;
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.hero-feature span {
+  margin-top: 2px;
+
+  color: var(--color-gray);
+  font-size: 11px;
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  .hero-content {
+    min-height: 560px;
+
+    grid-template-columns:
+      minmax(0, 0.88fr)
+      minmax(430px, 1.12fr);
+
+    gap: 20px;
+
+    padding: 30px 0 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(64px, 7.5vw, 92px);
+  }
+
+  .hero-visual {
+    max-width: 620px;
+  }
+
+  .hero-flavour-label {
+    left: -4px;
+  }
+
+  .hero-photo-label {
+    right: 0;
+  }
+
+  .hero-bottom-strip {
+    height: 110px;
+    min-height: 110px;
+  }
+
+  .hero-features {
+    height: 110px;
+  }
+}
+
+/* ========================================
+   SMALLER TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .hero-content {
+    min-height: 0;
+
+    grid-template-columns: 1fr;
+
+    padding-top: 35px;
+    padding-bottom: 60px;
+  }
+
+  .hero-text {
+    max-width: 700px;
+  }
+
+  .hero-visual {
+    width: min(100%, 680px);
+
+    justify-self: center;
+
+    margin-top: 10px;
+  }
+
+  .hero-flavour-label {
+    left: 0;
+  }
+
+  .hero-features {
+    height: auto;
+    min-height: 100px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 20px 0;
+  }
+
+  .hero-bottom-strip {
+    height: auto;
+    min-height: 100px;
+  }
+
+  .hero-feature:nth-child(2) {
+    border-right: none;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero-content {
+    min-height: auto;
+
+    padding: 30px 0 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 15vw, 82px);
+    line-height: 0.84;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-primary-button {
+    min-width: 215px;
+  }
+
+  .hero-visual {
+    padding: 15px 15px 40px;
+  }
+
+  .hero-photo {
+    border-width: 5px;
+    border-radius: 34% 30% 27% 25%;
+  }
+
+  .hero-photo-label {
+    width: 96px;
+    height: 96px;
+
+    right: 0;
+    top: 30px;
+  }
+
+  .hero-photo-label strong {
+    font-size: 21px;
+  }
+
+  .hero-flavour-label {
+    left: 0;
+    top: 85px;
+  }
+
+  .hero-cookie-indicator {
+    bottom: 0;
+  }
+
+  .hero-features {
+    gap: 0;
+  }
+
+  .hero-feature {
+    padding: 12px 15px 12px 0;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 520px) {
+  .hero {
+    padding-top: 92px;
+  }
+
+  .hero-content {
+    padding-bottom: 50px;
+  }
+
+  .hero-kicker {
+    margin-bottom: 18px;
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 55px;
+    line-height: 0.84;
+  }
+
+  .hero-description {
+    margin-top: 22px;
+
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .hero-primary-button {
+    min-width: 205px;
+    min-height: 58px;
+  }
+
+  .hero-button-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-visual {
+    padding: 10px 8px 38px;
+  }
+
+  .hero-photo {
+    border-width: 4px;
+  }
+
+  .hero-photo-label {
+    right: 0;
+    top: 18px;
+
+    width: 82px;
+    height: 82px;
+  }
+
+  .hero-photo-label span {
+    font-size: 8px;
+  }
+
+  .hero-photo-label strong {
+    font-size: 18px;
+  }
+
+  .hero-flavour-label {
+    left: -2px;
+    top: 50px;
+
+    font-size: 8px;
+  }
+
+  .hero-flavour-label span {
+    padding: 4px 8px;
+  }
+
+  .hero-flavour-label strong {
+    width: max-content;
+    max-width: none;
+
+    margin-top: 4px;
+    padding: 6px 10px 8px;
+
+    border-radius: 11px;
+
+    font-size: 19px;
+
+    white-space: nowrap;
+  }
+
+  .hero-cookie-indicator {
+    gap: 7px;
+  }
+
+  .hero-cookie-indicator button {
+    width: 8px;
+    height: 8px;
+  }
+
+  .hero-cookie-indicator button.active {
+    width: 24px;
+  }
+
+  .hero-bottom-strip {
+    border-radius: 45% 45% 0 0 / 12% 12% 0 0;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr 1fr;
+    padding: 18px 0;
+  }
+
+  .hero-feature {
+    min-height: 65px;
+    padding: 8px 10px 8px 0;
+  }
+
+  .hero-feature:nth-child(2) {
+    border-right: none;
+  }
+
+  .hero-feature > svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .hero-feature strong {
+    font-size: 9px;
+  }
+
+  .hero-feature span {
+    font-size: 9px;
+  }
+}
+
+/* ========================================
+   VERY SHORT DESKTOP SCREENS
+======================================== */
+
+@media (min-width: 901px) and (max-height: 800px) {
+  .hero-content {
+    min-height: 485px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(62px, 6.5vw, 88px);
+  }
+
+  .hero-description {
+    margin-top: 20px;
+  }
+
+  .hero-actions {
+    margin-top: 22px;
+  }
+
+  .hero-visual {
+    padding-top: 10px;
+    padding-bottom: 25px;
+  }
+
+  .hero-bottom-strip {
+    height: 105px;
+    min-height: 105px;
+  }
+
+  .hero-features {
+    height: 105px;
+  }
+}
